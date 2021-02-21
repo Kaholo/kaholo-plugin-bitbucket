@@ -55,8 +55,8 @@
           "type": "options",
           "options": [
             {
-              "id": "all",
-              "name": "All"
+              "id": "any",
+              "name": "Any"
             },
             {
               "id": "created",

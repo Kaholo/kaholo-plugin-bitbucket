@@ -17,7 +17,8 @@ function controller(req, res) {
     validateTriggerPR,
     { repoName, fromBranch, toBranch, actionType },
     req,
-    res
+    res,
+    "webhookPR"
   );
 }
 
@@ -35,14 +36,14 @@ async function validateTriggerPR(trigger, { repoName, fromBranch, toBranch, acti
   /**
    * if source branch was provided check if it matches source branch in pull request, if not then refuse
    */
-  if (triggerFromBranch && triggerFromBranch.value && triggerFromBranch.value != `` && minimatch(fromBranch, triggerFromBranch.value)) {
+  if (triggerFromBranch && triggerFromBranch.value && triggerFromBranch.value != `` && !minimatch(fromBranch, triggerFromBranch.value)) {
     throw `Not same source branch`;
   }
   /**
    * if target branch was provided check if it matches target branch in pull request, if not then refuse
    */
-  if (triggerToBranch && triggerToBranch.value && triggerToBranch.value != `` && minimatch(toBranch, triggerToBranch.value)) {
-    throw `Not same source branch`;
+  if (triggerToBranch && triggerToBranch.value && triggerToBranch.value != `` && !minimatch(toBranch, triggerToBranch.value)) {
+    throw `Not same target branch`;
   }
   /**
    * if no action type was provided, or it's value is any, then accept

@@ -19,7 +19,8 @@ function controller(req, res) {
     validateTriggerPush,
     { repoName, name, isTag },
     req,
-    res
+    res,
+    "webhookPush"
   );
 }
 
