@@ -1,0 +1,86 @@
+{
+  "name": "BitBucket-Trigger",
+  "type": "trigger",
+  "execProgram": "node",
+  "main": "app.js",
+  "imgUrl": "logo.png",
+  "version": "1.5.1",
+  "description": "BitBucket Trigger Plugin",
+  "methods": [
+    {
+      "name": "webhookPush",
+      "route": "post /webhook/bitbucket/push",
+      "viewName": "BitBucket Push",
+      "params": [
+        {
+          "name": "branchPat",
+          "viewName": "Branch pattern",
+          "type": "string"
+        },
+        {
+          "name": "tagPat",
+          "viewName": "Tag pattern",
+          "type": "string"
+        },
+        {
+          "name": "repoName",
+          "viewName": "BitBucket Repo Name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "webhookPR",
+      "route": "post /webhook/bitbucket/pr",
+      "viewName": "BitBucket pull request",
+      "params": [
+        {
+          "name": "toBranch",
+          "viewName": "Target Branch",
+          "type": "string"
+        },
+        {
+          "name": "fromBranch",
+          "viewName": "Source Branch",
+          "type": "string"
+        },
+        {
+          "name": "repoName",
+          "viewName": "BitBucket Repo Name",
+          "type": "string"
+        },
+        {
+          "name": "actionType",
+          "viewName": "Trigger on action",
+          "type": "options",
+          "options": [
+            {
+              "id": "all",
+              "name": "All"
+            },
+            {
+              "id": "created",
+              "name": "Created"
+            },
+            {
+              "id": "fulfilled",
+              "name": "Merged"
+            },
+            {
+              "id": "approved",
+              "name": "Approved"
+            },
+            {
+              "id": "declined",
+              "name": "Declined"
+            },
+            {
+              "id": "updated",
+              "name": "Updated"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
