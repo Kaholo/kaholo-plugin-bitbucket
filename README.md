@@ -5,10 +5,6 @@ Simple webhook trigger for Bitbucket
 After installing the plugin on Kaholo,
 on your Bitbucket repository, create a new webhook and set the URL required by each method.
 
-Whenever creating a new Trigger in Kaholo, you can specify the following:
-* Repository URL: The repository which pushing to will start the execution (e.g https://github.com/Kaholo/kaholo-plugin-GithubTrigger.git) 
-* Branch : The branch which pushing to will start the execution
-
 ## Git Push:
 This trigger whenever there is a push to a repository.
 
@@ -24,7 +20,7 @@ This trigger whenever there is a push to a repository.
 This trigger whenever there is merge of a pull request.
 
 ### Webhook URL:
-**{KAHOLO_URL}/webhook/Bitbucket/pr**
+**{KAHOLO_URL}/webhook/bitbucket/pr**
 
 ### Parameters:
 1) Target Branch - the target branch or target branch [minimatch pattern](https://github.com/isaacs/minimatch#readme) of the pull request(if not specified, then any branch)
