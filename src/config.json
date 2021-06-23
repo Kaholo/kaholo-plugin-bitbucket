@@ -1,16 +1,16 @@
 {
-  "name": "BitBucket-Trigger",
+  "name": "Bitbucket-Trigger",
   "type": "trigger",
   "execProgram": "node",
   "main": "app.js",
   "imgUrl": "logo.png",
-  "version": "1.5.1",
-  "description": "BitBucket Trigger Plugin",
+  "version": "1.6.0",
+  "description": "Handles Bitbucket webhooks",
   "methods": [
     {
       "name": "webhookPush",
       "route": "post /webhook/bitbucket/push",
-      "viewName": "BitBucket Push",
+      "viewName": "Bitbucket Push",
       "params": [
         {
           "name": "branchPat",
@@ -24,7 +24,7 @@
         },
         {
           "name": "repoName",
-          "viewName": "BitBucket Repo Name",
+          "viewName": "Bitbucket Repo Name",
           "type": "string"
         }
       ]
@@ -32,7 +32,7 @@
     {
       "name": "webhookPR",
       "route": "post /webhook/bitbucket/pr",
-      "viewName": "BitBucket pull request",
+      "viewName": "Bitbucket pull request",
       "params": [
         {
           "name": "toBranch",
@@ -46,7 +46,7 @@
         },
         {
           "name": "repoName",
-          "viewName": "BitBucket Repo Name",
+          "viewName": "Bitbucket Repo Name",
           "type": "string"
         },
         {
