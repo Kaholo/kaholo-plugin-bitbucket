@@ -1,9 +1,6 @@
 const minimatch = require("minimatch");
 
 async function webhookPush(req, res, settings, triggerControllers) {
-    if (!triggerControllers) {
-        return res.status(400).send("triggers cannot be nil");
-    }
     const body = req.body;
     if (!body.repository) {
       return res.status(400).send(`Repository not found!`);
@@ -33,9 +30,6 @@ async function webhookPush(req, res, settings, triggerControllers) {
 }
 
 async function webhookPR(req, res, settings, triggerControllers) {
-    if (!triggerControllers) {
-        return res.status(400).send("triggers cannot be nil");
-    }
     const body = req.body;
     if (!body.repository) {
       return res.status(400).send(`Repository not found!`);
